@@ -1,11 +1,8 @@
 package edu.craptocraft.stockx;
 
-import edu.craptocraft.stockx.item.Ask;
-import edu.craptocraft.stockx.item.Bid;
-import edu.craptocraft.stockx.item.Item;
-import edu.craptocraft.stockx.item.Offer;
-import edu.craptocraft.stockx.item.Sale;
-import edu.craptocraft.stockx.item.Sneaker;
+import edu.craptocraft.stockx.item.*;
+
+import edu.craptocraft.criteria.*;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -66,25 +63,25 @@ public class Stockx {
         sneaker.add(new Ask("9.5", 340));
         sneaker.add(new Ask("13", 330));
 
-        // /**
-        // * Crear el filtro "Bids" que filtra
-        // * solo las bids de entre las
-        // * offers de la zapatilla.
-        // */
+        /**
+         * Crear el filtro "Bids" que filtra
+         * solo las bids de entre las
+         * offers de la zapatilla.
+         */
 
-        // Criteria bids = new Bids();
-        // System.out.println("\n\t\t All BIDS");
-        // bids.checkCriteria(sneaker).forEach(System.out::print);
+        Criteria bids = new Bids();
+        System.out.println("\n\t\t All BIDS");
+        bids.checkCriteria(sneaker).forEach(System.out::print);
 
-        // /**
-        // * Crea el filtro "Asks" que filtra
-        // * solo las asks de entre las
-        // * offers de la zapatilla.
-        // */
+        /**
+         * Crea el filtro "Asks" que filtra
+         * solo las asks de entre las
+         * offers de la zapatilla.
+         */
 
-        // Criteria asks = new Asks();
-        // System.out.println("\n\t\t All ASKS");
-        // asks.checkCriteria(sneaker).forEach(System.out::print);
+        Criteria asks = new Asks();
+        System.out.println("\n\t\t All ASKS");
+        asks.checkCriteria(sneaker).forEach(System.out::print);
 
         // /**
         // * Muestra la bid maxima
@@ -130,12 +127,12 @@ public class Stockx {
          * a mas reciente.
          */
 
-        Sale sale = new Sale("6", 356);
-        sneaker.add(sale);
-        sneaker.add(new Sale("9.5", 352));
-        sneaker.add(new Sale("9.5", 404));
-        sneaker.add(new Sale("13", 360));
-        sneaker.add(new Sale("13", 372));
+        // Sale sale = new Sale("6", 356);
+        // sneaker.add(sale);
+        // sneaker.add(new Sale("9.5", 352));
+        // sneaker.add(new Sale("9.5", 404));
+        // sneaker.add(new Sale("13", 360));
+        // sneaker.add(new Sale("13", 372));
 
         // /**
         // * Crear el filtro "Sales" que filtra

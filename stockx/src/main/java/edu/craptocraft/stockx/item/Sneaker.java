@@ -21,8 +21,8 @@ public class Sneaker implements Item {
     public String toString() {
 
         StringBuilder output = new StringBuilder();
-        output.append("Style: ").append(style).append("\n");
-        output.append("Name: ").append(name);
+        output.append("Name: ").append(name).append("\n");
+        output.append("Style: ").append(style);
 
         return output.toString();
 
