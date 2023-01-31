@@ -17,19 +17,19 @@ public class Ask implements Offer {
 
     @Override
     public int value() {
-        return this.ask.intValue();
+        return this.ask;
     }
 
     @Override
-    public int compareTo(Offer offer) {
+    public int compareTo(Offer ask) {
 
-        return this.ask.compareTo(offer.value());
+        return this.ask.compareTo(ask.value());
 
     }
 
     @Override
     public String toString() {
-        return "\t\t" + size() + "\t" + Integer.toString(value()) + "\n";
+        return "\t\t" + this.size() + "\t" + this.value() + "\n";
     }
 
 }

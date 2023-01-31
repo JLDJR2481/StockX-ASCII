@@ -17,12 +17,20 @@ public class Sneaker implements Item {
         this.name = name;
     }
 
+    public Object getStyle() {
+        return this.style;
+    }
+
+    public Object getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
 
         StringBuilder output = new StringBuilder();
-        output.append("Name: ").append(name).append("\n");
-        output.append("Style: ").append(style);
+        output.append(name).append("\n");
+        output.append("\t\t" + style);
 
         return output.toString();
 
