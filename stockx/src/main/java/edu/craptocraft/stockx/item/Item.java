@@ -1,23 +1,11 @@
 package edu.craptocraft.stockx.item;
 
-import java.util.List;
-
 public interface Item {
 
-    int getBid();
+    public int getBid();
 
-    int getAsk();
+    public int getAsk();
 
-    int getSale();
-
-    void add(Offer offer);
-
-    List<Offer> offers();
-
-    void setBid(int bid);
-
-    void setAsk(int ask);
-
-    void setSale(int sale);
+    public int getSale();
 
 }
