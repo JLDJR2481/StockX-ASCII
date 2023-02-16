@@ -12,6 +12,7 @@ import edu.craptocraft.stockx.criteria.Criteria;
 import edu.craptocraft.stockx.criteria.Bids;
 import edu.craptocraft.stockx.criteria.Asks;
 import edu.craptocraft.stockx.criteria.MaxBid;
+import edu.craptocraft.stockx.criteria.MinAsk;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -110,23 +111,23 @@ public class Stockx {
         sneaker.setBid(maximum.isEmpty() ? 0 : maximum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
 
-        // /**
-        // * Muestra la ask minima
-        // * de la zapatilla.
-        // *
-        // * Crea el filtro MinAsk que filtra
-        // * el minimo de las asks de la zapatilla.
-        // * Devuelve la ask minima como unico
-        // * elemento de una lista de offers.
-        // *
-        // * Guarda esta ask minima en la propiedad
-        // * ask de sneaker.
-        // */
+        /**
+         * Muestra la ask minima
+         * de la zapatilla.
+         *
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
 
-        // Criteria minAsk = new MinAsk();
-        // List<Offer> minimum = minAsk.checkCriteria(sneaker);
-        // sneaker.setAsk(minimum.isEmpty() ? 0 : minimum.get(0).value());
-        // System.out.println(Stockx.draw(sneaker));
+        Criteria minAsk = new MinAsk();
+        List<Offer> minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty() ? 0 : minimum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
 
         // /**
         // * Añade ventas (sales) de
