@@ -19,6 +19,7 @@ import edu.craptocraft.stockx.criteria.LastSale;
 import edu.craptocraft.stockx.criteria.Size;
 import edu.craptocraft.stockx.criteria.AndCriteria;
 import edu.craptocraft.stockx.criteria.Max;
+import edu.craptocraft.stockx.criteria.Min;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -222,16 +223,16 @@ public class Stockx {
         sneaker.setBid(sizeBid.isEmpty() ? 0 : sizeBid.get(0).value());
         System.out.println("\n\t\t MAX BID 9.5 US: " + sneaker.getBid());
 
-        // /**
-        // * Crea un filtro Min(size, asks)
-        // * que devuelva el minimo de las asks
-        // * de una talla.
-        // */
+        /**
+         * Crea un filtro Min(size, asks)
+         * que devuelva el minimo de las asks
+         * de una talla.
+         */
 
-        // Criteria sizeMinAsk = new Min(size, asks);
-        // List<Offer> sizeAsk = sizeMinAsk.checkCriteria(sneaker);
-        // sneaker.setAsk(sizeAsk.isEmpty() ? 0 : sizeAsk.get(0).value());
-        // System.out.println("\n\t\t MIN ASK 9.5 US: " + sneaker.getAsk());
+        Criteria sizeMinAsk = new Min(size, asks);
+        List<Offer> sizeAsk = sizeMinAsk.checkCriteria(sneaker);
+        sneaker.setAsk(sizeAsk.isEmpty() ? 0 : sizeAsk.get(0).value());
+        System.out.println("\n\t\t MIN ASK 9.5 US: " + sneaker.getAsk());
 
         // /**
         // * Mostrar info de la zapatilla
