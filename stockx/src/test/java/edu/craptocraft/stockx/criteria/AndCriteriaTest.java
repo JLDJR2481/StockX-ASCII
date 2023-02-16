@@ -35,6 +35,6 @@ public class AndCriteriaTest {
         assertTrue(andSizeBids.checkCriteria(sneaker).stream().allMatch(o -> o instanceof Bid));
 
         Criteria andBidsSize = new AndCriteria(bids, size);
-        assertEquals(2, andBidsSize.checkCriteria(sneaker).size());
+        assertEquals(3, andBidsSize.checkCriteria(sneaker).size());
     }
 }
