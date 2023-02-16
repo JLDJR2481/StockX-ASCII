@@ -1,13 +1,17 @@
 package edu.craptocraft.stockx;
 
+import java.util.List;
+
 import edu.craptocraft.stockx.item.Sneaker;
 import edu.craptocraft.stockx.item.Item;
 import edu.craptocraft.stockx.item.Bid;
 import edu.craptocraft.stockx.item.Ask;
+import edu.craptocraft.stockx.item.Offer;
 
 import edu.craptocraft.stockx.criteria.Criteria;
 import edu.craptocraft.stockx.criteria.Bids;
 import edu.craptocraft.stockx.criteria.Asks;
+import edu.craptocraft.stockx.criteria.MaxBid;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -88,23 +92,23 @@ public class Stockx {
         System.out.println("\n\t\t All ASKS");
         asks.checkCriteria(sneaker).forEach(System.out::print);
 
-        // /**
-        // * Muestra la bid maxima
-        // * de la zapatilla.
-        // *
-        // * Crea el filtro MaxBid que filtra
-        // * el maximo de las bids de la zapatilla.
-        // * Devuelve la bid maxima como unico
-        // * elemento de una lista de offers.
-        // *
-        // * Guarda esta bid maxima en la
-        // * propiedad bid de sneaker.
-        // */
+        /**
+         * Muestra la bid maxima
+         * de la zapatilla.
+         *
+         * Crea el filtro MaxBid que filtra
+         * el maximo de las bids de la zapatilla.
+         * Devuelve la bid maxima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta bid maxima en la
+         * propiedad bid de sneaker.
+         */
 
-        // Criteria maxBid = new MaxBid();
-        // List<Offer> maximum = maxBid.checkCriteria(sneaker);
-        // sneaker.setBid(maximum.isEmpty() ? 0 : maximum.get(0).value());
-        // System.out.println(Stockx.draw(sneaker));
+        Criteria maxBid = new MaxBid();
+        List<Offer> maximum = maxBid.checkCriteria(sneaker);
+        sneaker.setBid(maximum.isEmpty() ? 0 : maximum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
 
         // /**
         // * Muestra la ask minima
