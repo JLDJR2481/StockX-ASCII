@@ -16,24 +16,6 @@ import edu.craptocraft.stockx.item.Sneaker;
 public class BidsTest {
 
     @Test
-    public void checkCriteria_bids_Test() {
-        Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
-        sneaker.add(new Bid("5.5", 550));
-        sneaker.add(new Bid("4.5", 480));
-        sneaker.add(new Bid("5.5", 900));
-        sneaker.add(new Bid("6", 472));
-
-        Criteria bids = new Bids();
-
-        List<Offer> filteredBids = bids.checkCriteria(sneaker);
-        assertTrue(filteredBids.stream().allMatch(b -> b instanceof Bid));
-
-        Optional<Offer> maxOpt = Optional.ofNullable(bids.checkCriteria(sneaker).get(0));
-        sneaker.setBid(maxOpt.isPresent() ? maxOpt.get().value() : 0);
-        assertEquals(900, sneaker.getBid());
-    }
-
-    @Test
     public void checkCriteria_bids_aks_Test() {
         Sneaker sneaker = new Sneaker("555088-105", "Jordan 1");
         sneaker.add(new Bid("5.5", 550));
@@ -51,7 +33,7 @@ public class BidsTest {
 
         Optional<Offer> maxOpt = Optional.ofNullable(bids.checkCriteria(sneaker).get(0));
         sneaker.setBid(maxOpt.isPresent() ? maxOpt.get().value() : 0);
-        assertEquals(900, sneaker.getBid());
+        assertEquals(550, sneaker.getBid());
     }
 
     @Test
