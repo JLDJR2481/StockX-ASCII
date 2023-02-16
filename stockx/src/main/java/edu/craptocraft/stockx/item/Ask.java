@@ -27,6 +27,6 @@ public class Ask implements Offer {
 
     @Override
     public String toString() {
-        return "\n\t" + this.size + "\t" + this.ask;
+        return "\t\t" + this.size + "\t" + this.ask + "\n";
     }
 }

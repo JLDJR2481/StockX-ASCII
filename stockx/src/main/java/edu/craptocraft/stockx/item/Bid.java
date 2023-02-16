@@ -27,7 +27,7 @@ public class Bid implements Offer {
 
     @Override
     public String toString() {
-        return "\n\t" + this.size + "\t" + this.value();
+        return "\t\t" + this.size + "\t" + this.value() + "\n";
     }
 
 }
