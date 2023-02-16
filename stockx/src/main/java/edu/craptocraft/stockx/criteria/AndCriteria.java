@@ -20,9 +20,10 @@ public class AndCriteria implements Criteria {
     public List<Offer> checkCriteria(Item sneaker) {
 
         List<Offer> firstCriteria = new ArrayList<Offer>(criteria.checkCriteria(sneaker));
+
         List<Offer> secondCriteria = new ArrayList<Offer>(otherCriteria.checkCriteria(sneaker));
 
-        return secondCriteria.stream().filter(c -> c.size().equals(firstCriteria.get(0).size())).toList();
+        return secondCriteria.stream().filter(o -> o.size().equals(firstCriteria.get(0).size())).toList();
     }
 
 }
